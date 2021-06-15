@@ -11,10 +11,8 @@ variables:
 
 steps:
 - task: UseDotNet@2
-  displayName: 'Use .NET SDK 5.0'
-  inputs:
-    packageType: sdk
-    version: 5.0.203
+  script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
 
 - task: Npm@1
   displayName: 'Run npm install'
